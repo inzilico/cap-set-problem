@@ -1,5 +1,7 @@
 # Cap Set Problem
 
+The repo represents approaches to solve this task. 
+
 ## Descripion
 
 ## Data
