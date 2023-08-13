@@ -4,6 +4,7 @@
 ## To check the possibility for the open cards to form sets,
 ## 2-card combinations among open cards are calculated, the third card from the deck is added. 
 ## The card from the deck is choosen randomly. 
+## Author: Gennady Khvorykh, info@inzilico.com
 
 use strict;
 use warnings;

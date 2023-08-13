@@ -3,6 +3,7 @@
 ## File with 3-card combinations should be labeled by {0 ,1} having 4 columns.
 ## To check the possibility for the open cards to form sets,
 ## 2-card combinations among open cards are calculated, the third card from the deck is added. 
+## Author: Gennady Khvorykh, info@inzilico.com
 
 use strict;
 use warnings;

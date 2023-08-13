@@ -4,6 +4,7 @@
 ## To check the possibility for the open cards to form sets,
 ## 2-card combinations among open cards are calculate and compared with all cards in deck. 
 ## The deck cards forming set with the given 2-card combination are removed. 
+## Author: Gennady Khvorykh, info@inzilico.com
 
 use strict;
 use warnings;

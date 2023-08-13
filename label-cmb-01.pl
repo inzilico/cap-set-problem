@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 ## Label 3-card combinations by non-set/set {0, 1}
+## Author: Gennady Khvorykh, info@inzilico.com
 
 use strict;
 use warnings;

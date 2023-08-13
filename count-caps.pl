@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 ## Get the length of caps and count them
+## Author: Gennady Khvorykh, info@inzilico.com
 
 use strict;
 use warnings;

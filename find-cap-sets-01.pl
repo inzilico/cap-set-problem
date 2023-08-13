@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 ## Find sets
 ## File with 3-card combinations should be labeled by {0 ,1} having 4 columns.
+## Author: Gennady Khvorykh, info@inzilico.com
 
 use strict;
 use warnings;
