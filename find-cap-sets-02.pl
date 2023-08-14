@@ -20,22 +20,11 @@ die "Wrong number of arguments" if ($#ARGV + 1 != 3);
 die "$f1 doesn't exist or empty" unless -s $f1;
 die "$f2 doesn't exist or empty" unless -s $f2;
 
+# Load cards
+my ($cards, $ind)  = load_cards($f2);
+
 # Open file with labeled 3-card combinations
 open (my $fh1, '<', $f1) or die "Failed to open $f1";
-
-# Open file with cards 
-open (my $fh2, '<', $f2) or die "Failed to open $f2";
-
-# Load cards
-my @cards = <$fh2>;
-chomp @cards;
-my $size = @cards;
-print "Number of cards: $size\n";
-# Let cards start with index 1
-unshift @cards, 0;
-
-# Initiate card index
-my @ind = 1..$size;
 
 # Open file to save output
 open (my $fh3, '>', $f3) or die "Failed to open $f3";
@@ -54,7 +43,7 @@ while (<$fh1>) {
 	# Skip if set
 	next if $l == 1;
 	# Initiate deck
-	my @deck = diff(\@ind, \@oc);
+	my @deck = diff($ind, \@oc);
 	# Generate 2-card combinations from open cards
 	my @cmbs = combinations(\@oc, 2);
 	# Process deck until it has cards
@@ -63,7 +52,7 @@ while (<$fh1>) {
 		my $card = shift @deck;
 		# Add card to open cards if it doesn't make sets with open cards
 		# and update 2-card combinations
-		unless (sets(\@cmbs, $card, \@cards)) {
+		unless (sets(\@cmbs, $card, $cards)) {
 			push @oc, $card;
 			@cmbs = combinations(\@oc, 2);
 		}
@@ -74,16 +63,32 @@ while (<$fh1>) {
 	$n =++ $n;
 }
 
-print "The number of non-sets processed: $n\n";
+print "No of non-sets processed: $n\n";
 
 # Close files
 close $fh1;
-close $fh2;
 close $fh3;
 
 exit 0;
 
 # === subs ===
+
+sub load_cards {
+  my $f = $_[0];
+  # Open file with cards 
+  open (my $fh, '<', $f) or die "Failed to open $f";
+  # Load cards
+  my @cards = <$fh>;
+  chomp @cards;
+  my $size = @cards;
+  print "No of cards: $size\n";
+  # Let cards start with index 1
+  unshift @cards, 0;
+  # Initiate card index
+  my @ind = 1..$size;
+  close $fh;
+  return \@cards, \@ind;
+}
 
 sub is_set {
 	my @arg = @_;
