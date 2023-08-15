@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+##!/usr/bin/parallel --shebang-wrap /usr/bin/perl
 ## Find sets
 ## File with 3-card combinations should be labeled by {0 ,1} having 4 columns.
 ## To check the possibility for the open cards to form sets,
