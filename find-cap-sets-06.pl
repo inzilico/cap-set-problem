@@ -30,7 +30,7 @@ my ($cards, $ind) = load_cards($f1);
 
 # Generate 2-card combinations
 my @data = combinations($ind, 2);
-print "No of 2-card cominations: ".(scalar @data)."\n";
+print "No of 2-card combinations: ".(scalar @data)."\n";
 
 # Open output file
 open (my $fh2, '>', $f2) or die "Failed to open $f2";
