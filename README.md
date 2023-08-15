@@ -8,15 +8,17 @@ The repo represents approaches to solve this task.
 
 ## Scripts
 
-The best performance was demonstrated by the script 'find-cap-sets-06.pl'.
-It took 0.8 sec to find maximal cap for n = 3.
+
+The best performance was demonstrated by the following scripts:
 
 ```bash
-
-# Find cap sets for n = 3
-perl find-cap-sets-06.pl --cards data/cards-3n.txt --out data/cap-sets-3n-06.txt
-
+# n = 3
+time perl find-cap-sets-06.pl --cards data/cards-3n.txt --out data/cap-sets-3n-06.txt # 0m0.987s
+time perl find-cap-sets-06-02.pl --cards data/cards-3n.txt --out data/cap-sets-3n-06-02.txt # 0m0.312s 
 ```
+
+`find-cap-sets-06-02.pl` differs from `find-cap-sets-06.pl` by utilizing parallel computation based on MCE::Flow.
+
 
 ```bash
 # Find cap sets for n = 3 
