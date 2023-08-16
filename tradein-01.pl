@@ -13,12 +13,14 @@ use Getopt::Long;
 
 # Initiate
 my ($in, $out, $length, $cards_file);
+my $nc = 10; # Number of CPUs
 
 GetOptions(
 	"--in=s" => \$in,
 	"--out=s" => \$out,
 	"--cards=s" => \$cards_file,
-	"--length=i" => \$length
+	"--length=i" => \$length,
+	"--nc" => \$nc
 ) or die "Wrong argument"; 
 
 # Check input
@@ -37,7 +39,8 @@ my ($cards, $ind) = load_cards($cards_file);
 
 # Initilize MCE::Flow
 MCE::Flow->init(
-   chunk_size  => 10,
+  chunk_size  => 10,
+	max_workers => $nc
 );
 
 # Process chunks in parallel
