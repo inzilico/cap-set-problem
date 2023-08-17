@@ -9,6 +9,8 @@ The repo represents approaches to solve this task.
 ## Scripts
 
 
+### Find largest cap
+
 The best performance was demonstrated by the following scripts:
 
 ```bash
@@ -29,5 +31,15 @@ perl count-caps.pl data/cap-sets-3n-04.txt
 
 ```
 
+### Tradein
 
+```bash
+
+# One point
+perl tradein-01.pl -i data/cap-sets-3n-06-02.txt -c data/cards-3n.txt -l 8 -o data/cap-sets-3n-tradein.txt
+
+# Two points
+
+
+```
 
