@@ -15,13 +15,14 @@ use Data::Dumper;
 # Initiate
 my $f1; # Path/to/file with cards
 my $f2; # Path/to/file to save output
+my $nc = 8; # The number of CPUs
 
 # Get arguments
 GetOptions (
 	"--cards=s" => \$f1,
-	"--out=s" => \$f2
-) 
-or die("Wrong arguments!");
+	"--out=s" => \$f2,
+	"--nc=i" => \$nc
+) or die("Wrong arguments!");
 
 # Check input
 die "File with cards wasn't defined" unless defined $f1;
@@ -37,7 +38,8 @@ print "No of 2-card combinations: ".(scalar @data)."\n";
 
 # Set up Flow
 MCE::Flow->init(
-   chunk_size  => 10,
+  chunk_size  => 10,
+	max_workers => $nc
 );
 
 # Process chunks in parallel
