@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-## Filter caps by lengh and process with tradein approach.
+## Filter caps by lengh and process with tradein approach (one point traded).
 ## Author: Gennady Khvorykh, info@inzilico.com
 
 use strict;
