@@ -39,7 +39,7 @@ perl count-caps.pl data/cap-sets-3n-04.txt
 perl tradein-01.pl -i data/cap-sets-3n-06-02.txt -c data/cards-3n.txt -l 8 -o data/cap-sets-3n-tradein.txt
 
 # Two points
-
+perl tradein-02.pl -i data/cap-sets-3n-06-02.txt -l 8 -c data/cards-3n.txt -o data/cap-sets-3n-tradein-02.txt
 
 ```
 
