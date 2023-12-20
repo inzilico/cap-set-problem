@@ -1,6 +1,6 @@
 # Cap Set Problem
 
-The repo represents approaches to find cap set for different n. 
+The repo represents approaches to find cap set for different  values of n. 
 
 ## Descripion
 
